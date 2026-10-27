@@ -13,6 +13,16 @@ router.use((req, res, next) => {
   next();
 });
 
+router.get('/signup', (req, res) => {
+  res.render('pages/reg', {
+    roles: ["User", "Admin"],
+  });
+});
+
+router.get('/signin', (req, res) => {
+  res.render('pages/login');
+});
+
 router.post(
   "/signup",
   [
