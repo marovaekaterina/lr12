@@ -1,4 +1,4 @@
-const { verifySignUp } = require("../middleware/verifySignUp");
+const { checkDuplicateUsernameOrEmail, checkRolesExisted } = require("../middleware/verifySignUp");
 const express = require("express");
 const signin = require("../controller/signin");
 const signup = require("../controller/signup");
@@ -9,26 +9,27 @@ router.use((req, res, next) => {
     "Access-Control-Allow-Headers",
     "x-access-token, Origin, Content-Type, Accept, Authorization"
   );
-  console.log(req.params)
   next();
 });
 
 router.get('/signup', (req, res) => {
   res.render('pages/reg', {
     roles: ["User", "Admin"],
+    errors: {},
+    values: {}
   });
 });
 
 router.get('/signin', (req, res) => {
-  res.render('pages/login');
+  res.render('pages/login', {
+    errors: {},
+    values: {}
+  });
 });
 
 router.post(
   "/signup",
-  [
-    checkDuplicateUsernameOrEmail,
-    checkRolesExisted
-  ],
+  [checkDuplicateUsernameOrEmail, checkRolesExisted],
   signup.signup
 );
 
