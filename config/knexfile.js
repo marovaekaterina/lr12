@@ -8,9 +8,9 @@ module.exports = {
     database: 'lr12_auth' //Название БД
   },
   migrations: {
-    directory: './migrations'
+    directory: '../migrations'
   },
   seeds: {
-    directory: './seeds'
+    directory: '../seeds'
   }
 }
