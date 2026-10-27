@@ -2,28 +2,19 @@
   "name": "lr12",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
-    "migrate": "knex migrate:latest --knexfile ./config/knexfile.js",
-    "seed": "knex seed:run --knexfile ./config/knexfile.js"
+    "migrate": "knex migrate:latest --knexfile ./src/config/knexfile.js",
+    "seed": "knex seed:run --knexfile ./src/config/knexfile.js"
   },
-  
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "ejs": "^7.0.2",
-    "express": "^5.3.0",
-    "jsonwebtoken": "^9.0.3",
-    "knex": "^3.3.0",
-    "pg": "^8.23.1",
+    "bcrypt": "^5.1.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.0.1",
+    "pg": "^8.11.3",
     "validate.js": "^0.13.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.14"
   }
 }

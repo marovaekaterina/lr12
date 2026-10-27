@@ -7,8 +7,8 @@ const bcrypt = require('bcrypt');
 
 exports.signin = (req, res) => {
   knex('users')
-    .join('user-roles', 'users.id', '=', 'user-roles.user_id')
-    .join('roles', 'roles.id', '=', 'user-roles.roles_id')
+    .join('user_roles', 'users.id', '=', 'user_roles.user_id')
+    .join('roles', 'roles.id', '=', 'user_roles.roles_id')
     .where('users.username', req.body.username)
     .select('users.id', 'users.username', 'users.email', 'users.password', 'roles.name')
     .then(users => {

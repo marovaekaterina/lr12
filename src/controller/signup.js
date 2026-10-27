@@ -44,7 +44,7 @@ exports.signup = (req, res) => {
           .whereIn('name', roles)
           .pluck('id');
         console.log(roleIds)
-        await trx('user-roles').insert(
+        await trx('user_roles').insert(
           roleIds.map(roleId => ({
             user_id: userId[0].id,
             roles_id: roleId
