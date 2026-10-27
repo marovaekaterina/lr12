@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <%- include('../partials/head'); %>
+  <title>Аккаунт пользователя</title>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <h1>Профиль</h1>
+      <p class="sub">Данные авторизованного пользователя</p>
+
+      <div class="data-list">
+        <div class="data-item">
+          <div class="data-label">ID пользователя</div>
+          <div class="data-value"><%= user.id %></div>
+        </div>
+
+        <div class="data-item">
+          <div class="data-label">Имя пользователя</div>
+          <div class="data-value"><%= user.username %></div>
+        </div>
+
+        <div class="data-item">
+          <div class="data-label">Почта</div>
+          <div class="data-value"><%= user.email %></div>
+        </div>
+
+        <div class="data-item">
+          <div class="data-label">Роли в системе</div>
+          <div class="data-value"><%= user.roles.join(', ') %></div>
+        </div>
+
+        <div class="data-item">
+          <div class="data-label">JWT Access Token</div>
+          <div class="data-value" style="font-size: 12px; font-family: monospace;"><%= user.accessToken %></div>
+        </div>
+      </div>
+
+      <a class="btn" href="/auth/signin">Выйти</a>
+      <%- include('../partials/footer'); %>
+    </div>
+  </div>
+</body>
+</html>

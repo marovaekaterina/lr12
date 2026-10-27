@@ -1,10 +1,27 @@
 <h1>Авторизация</h1>
-<form method="POST" action="/auth/signin">
-    <label for="username">Имя пользователя:</label>
-    <input type="text" id="username" name="username" required>
-    <br>
-    <label for="password">Пароль:</label>
-    <input type="password" id="password" name="password" required>
-    <br>
-    <input type="submit" value="Войти">
+<p class="sub">Войдите в свой аккаунт</p>
+
+<form class="form-box" method="POST" action="/auth/signin" novalidate>
+    <div class="field <%= errors && errors.username ? 'error' : '' %>">
+        <label for="username">Имя пользователя</label>
+        <input type="text" id="username" name="username" value="<%= values && values.username ? values.username : '' %>"
+            required>
+        <% if (errors && errors.username) { %>
+            <p class="error-text">
+                <%= errors.username[0] %>
+            </p>
+            <% } %>
+    </div>
+
+    <div class="field <%= errors && errors.password ? 'error' : '' %>">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" required>
+        <% if (errors && errors.password) { %>
+            <p class="error-text">
+                <%= errors.password[0] %>
+            </p>
+            <% } %>
+    </div>
+
+    <button type="submit" class="btn">Войти</button>
 </form>

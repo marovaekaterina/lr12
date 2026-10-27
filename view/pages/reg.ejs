@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <%- include('../partials/head'); %>
   <title>Регистрация</title>
 </head>
-<body class="container">
-  <header>
-    <%- include('../partials/header', {variant:'compact'}); %>
-  </header>
-  <main>
-    <div class="row">
+<body>
+  <div class="page">
+    <div class="card">
+      <%- include('../partials/header'); %>
       <%- include('../partials/form_reg'); %>
+      <%- include('../partials/footer'); %>
     </div>
-  </main>
-  <footer>
-    <%- include('../partials/footer'); %>
-  </footer>
+  </div>
 </body>
 </html>
