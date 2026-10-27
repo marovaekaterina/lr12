@@ -1,0 +1,29 @@
+{
+  "name": "lr12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "migrate": "knex migrate:latest --knexfile ./config/knexfile.js",
+    "seed": "knex seed:run --knexfile ./config/knexfile.js"
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "knex": "^3.3.0",
+    "pg": "^8.23.1",
+    "validate.js": "^0.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
